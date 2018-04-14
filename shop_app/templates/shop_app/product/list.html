@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista produktów</title>
+</head>
+<body>
+        <div>
+            <h1>Kategorie</h1>
+        </div>
+
+ <ul>
+    {% for kategoria in kategorie%}
+        <li><a href="">{{ kategoria }}</a></li>
+    {% endfor %}
+    </ul>
+        <h1> Produkty</h1>
+ <ul>
+    {% for product in produkty%}
+        <li><a href="">{{ product }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

@@ -15,7 +15,7 @@ Funkcje które chce stworzyć:
 -przekierowanie do płatności
 -strona startowa z aktualnościami
 -rejstracja i logowanie dla użytkowników którzy bedą mogli sprawdzać historie zakupów a także zapisać swoje dane
-
+-postawienie na darmowym serwerze zewnętrznym
 
 Użyte technologie:
 Django
