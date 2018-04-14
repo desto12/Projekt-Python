@@ -13,6 +13,8 @@ Funkcje które chce stworzyć:
 -możliwość sortowania przedmiotów
 -koszyk produktów
 -przekierowanie do płatności
+-strona startowa z aktualnościami
+-rejstracja i logowanie dla użytkowników którzy bedą mogli sprawdzać historie zakupów a także zapisać swoje dane
 
 
 Użyte technologie:
