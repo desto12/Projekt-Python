@@ -22,3 +22,20 @@ Django
 Python
 html
 css
+
+Raport II 24.04.2018
+Co udało się zrobić:
+-Nauka podstaw obsługi django
+-stworzenie projektu
+-nauka obsługi git-a
+-utworzenie modeli produktów, kategorii(zawierają zdjęcia, ilość na stanie, opis, cene itp.)
+-podział według kategorii
+-utworzenie konta admina
+-dodanie adrsów url
+-stworzenie widoku produktu i kategorii, oraz szczegółowego podglądu produktu
+Czego brakuje:
+-Ładnie uporządkowanej strony startowej z produktami i kategoriami
+-koszyka
+-strony podglądu szczegółowego przedmiotu (widok jest stworzony)
+-rejstracji użytkowników
+-przekierowań do płatności
