@@ -1,0 +1,52 @@
+{% extends 'shop_app/base.html' %}
+{% load static %}
+{% block title %}
+    Koszyk
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<h1 style="margin-top: 6%">Koszyk</h1><hr>
+	<table class="table table-striped table-hover table-bordered" style="margin-top: 6%">
+        <tbody>
+        {% for item in cart %}
+            {% with product=item.product %}
+            <tr>
+                <th>Przedmiot</th>
+                <th>Zdjęcie</th>
+                <th>Ilość</th>
+                <th>Cena jednostkowa</th>
+                <th>W sumie</th>
+                <th>Usuń</th>
+            </tr>
+                <td>{{ product.nazwa }}</td>
+                <td><a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/brak.jpg' %} {% endif %}" alt="..." style="height: 130px; width: auto"></td>
+                <td><form action = "{% url "cart:cart_add" product.id %}" method="post">
+                    {{ item.update_quantity_form.quantity }}
+                    {{ item.update_quantity_form.update }}
+                        {% csrf_token %}
+     <input type = "submit" value="zmień">
+             </td>
+            </form>
+                <td>{{ item.price }}PLN</td>
+                <td>{{item.total_price}}</td>
+                <td><a href="{% url "cart:cart_remove" product.id %}">Usuń</a></td>
+
+            </tr>
+                {% endwith %}
+    {% endfor %}
+        <tr><th colspan="3"><span class="pull-right">Suma</span></th>
+             <th>{{cart.all_price}}PLN</th>
+        </tr>
+                    <tr>
+                <td><a href="{% url "shop:product_list" %}" class="btn btn-primary">Kontynuuj zakupy</a></td>
+                <td colspan="3"><a href="#"  class="pull-right btn btn-success">Przejdź do płatności</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

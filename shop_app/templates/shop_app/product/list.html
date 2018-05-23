@@ -1,24 +1,57 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista produktów</title>
-</head>
-<body>
-        <div>
-            <h1>Kategorie</h1>
-        </div>
+{% extends 'shop_app/base.html' %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.nazwa }} {% else %} Produkty {% endif %}
+{% endblock %}
+ 
+{% block content %}
+   <div class="container-fluid">
+      <div class="row" style="margin-top: 6%">
+ 
+        <div class="col-sm-8 blog-main">
+ 
+          <div class="blog-post">
+              <div class="row">
+                  {% for product in products %}
+                      <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ product.get_absolute_url }}">
+                                <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/brak.jpg' %} {% endif %}" alt="..." style="height: 130px; width: auto">
+                            </a>
+                            <div class="caption">
+                                <h3 class="text-center">
+                                    <a href="{{ product.get_absolute_url }}">{{ product.nazwa }}</a>
+                                </h3>
+                                <p class="text-center">{{ product.cena }} PLN</p>
+                            </div>
+                        </div>
+                      </div>
+                  {% endfor %}
+              </div>
+ 
+ 
+          </div><!-- /.blog-post -->
+ 
+        </div><!-- /.blog-main -->
+ 
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module">
+            <h4>Kategorie</h4>
 
- <ul>
-    {% for kategoria in kategorie%}
-        <li><a href="">{{ kategoria }}</a></li>
-    {% endfor %}
-    </ul>
-        <h1> Produkty</h1>
- <ul>
-    {% for product in produkty%}
-        <li><a href="">{{ product }}</a></li>
-    {% endfor %}
-    </ul>
-</body>
-</html>
+
+            <ul class="nav nav-pills nav-stacked" id="red">
+              <li {% if not category %} class="active"{% endif %}><a href="{% url 'shop:product_list' %}">Wszystko</a></li>
+            {% for c in categories %}
+ 
+              <li {% if category.slug == c.slug %} class="active"{% endif %} id="kategoria">
+                  <a href="{{ c.get_absolute_url }}">{{ c.nazwa }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </div><!-- /.blog-sidebar -->
+ 
+      </div><!-- /.row -->
+ 
+    </div><!-- /.container -->
+{% endblock %}

@@ -1,0 +1,6 @@
+#red .active a,
+#red .active a:hover {
+    background-color: red;
+}
+
+.thumbnail:hover{opacity: 0.5;}

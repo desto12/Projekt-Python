@@ -1,10 +1,101 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Szczegóły</title>
-</head>
-<body>
-<p>test</p>
-</body>
-</html>
+{% extends 'shop_app/base.html' %}
+{% load static %}
+{% block title %}
+    {% if product %}{{ product.nazwa }} {% else %} Produkty {% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row" style="margin-top: 6%">
+      <div class="row">
+  <div class="col-md-12">
+   <h1>{{product.nazwa}}</h1>
+ </div>
+</div><!-- end row-->
+        <div class="col-md-6">
+ <img
+  src="{% if product.image %} {{product.image.url}} {%else%} {%static 'img/brak.jpg'%} {% endif %}" alt="..." class="image-responsive" />
+
+        </div>
+   <div class="col-md-6">
+    <div class="col-sm-4"></div>
+<ul class="nav nav-tabs" role="tablist">
+ <li role="presentation" class="active">
+  <a href="#description"
+   aria-controls="description"
+   role="tab"
+   data-toggle="tab"
+  >Opis</a>
+ </li>
+ <li role="presentation">
+  <a href="#features"
+   aria-controls="features"
+   role="tab"
+   data-toggle="tab"
+  >Dane techniczne</a>
+ </li>
+ <li role="presentation">
+  <a href="#reviews"
+   aria-controls="reviews"
+   role="tab"
+   data-toggle="tab"
+  >Recenzje</a>
+ </li>
+</ul>
+        <!-- Tab panes -->
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="description">
+ <p class="top-10">{{product.opis}}</p>
+ <p>
+</div>
+ <div role="tabpanel" class="tab-pane top-10" id="features">
+     <p>Materiał: {{product.materiał}}</p>
+     <p>Szerokość: {{product.długość}}</p>
+     <p>Wysokość: {{product.wysokość}}</p>
+ </div>
+ <div role="tabpanel" class="tab-pane" id="notes">
+  ...
+ </div>
+ <div role="tabpanel" class="tab-pane" id="reviews">
+  ...
+ </div>
+
+
+</div>
+        <div class="row">
+ <div class="col-md-12 bottom-rule">
+  <h2 class="product-price">{{product.cena}}PLN</h2>
+ </div>
+</div><!-- end row -->
+
+<!--<div class="row add-to-cart">
+ <div class="col-md-8 product-qty">
+  <span class="btn btn-default btn-lg btn-qty">
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </span>
+  <input class="btn btn-default btn-lg btn-qty" value="1" />
+  <span class="btn btn-default btn-lg btn-qty">
+   <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+  </span>
+ </div> -->
+ <div class="col-md-4">
+     <form action = "{% url "cart:cart_add" product.id %}" method="post">
+     {{ cart_product_form }}
+     {% csrf_token %}
+     <input type = "submit" value="Dodaj do koszyka">
+     </form>
+  <!--<button class="btn btn-lg btn-brand btn-full-width">
+   Dodaj do koszyka
+  </button>
+ </div>
+</div><!-- end row -->
+
+<div class="row">
+ <div class="col-md-8 text-center">
+  <span class="monospaced">Ilość sztuk na magazynie:{{product.stan}}</span>
+ </div>
+</div><!-- end row -->
+
+   </div>
+    </div>
+{% endblock %}

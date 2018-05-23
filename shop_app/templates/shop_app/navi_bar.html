@@ -1,0 +1,48 @@
+{% load static %}
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0px; background-color: red;" id="nav">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="container-fluid">
+      <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'shop:product_list' %}" style="color: #ffffff">Sklep Meblowy</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+              <ul class="nav navbar-nav navbar-right" id="koszyk">
+           <li>
+            {% with total_items=cart|length %}
+              {% if cart|length > 0 %}
+                Twój koszyk:
+                  <a href="{% url "cart:cart_detail" %}">
+               {{total_items}} przedmiot(y), {{cart.all_price}} PLN</a>
+            {% else %}
+                Twój koszyk jest pusty &nbsp
+          </li>
+          {% endif %}
+          {% endwith %}
+    </ul>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+          {% if request.user.is_authenticated %}
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">{{ request.user.username }}<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="">logout</a></li>
+            {% else %}
+          <li class="divider"></li>
+          <li><a href="#" style="color: #ffffff">Logowanie</a></li>
+         <li><a href="#" style="color: #ffffff">Rejstracja</a></li>
+        </ul>
+         {% endif %}
+
+      </li>
+    </ul>
+
+  </div>
+  </div>
+</nav>
