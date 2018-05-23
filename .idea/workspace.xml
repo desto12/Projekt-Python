@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="356a395c-466e-4b7b-bf83-902aa8174083" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/context_procesors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/img/brak.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/static/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/templates/shop_app/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop_app/templates/shop_app/navi_bar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_app/templates/shop_app/product/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop_app/templates/shop_app/product/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_app/templates/shop_app/product/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop_app/templates/shop_app/product/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop_app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,7 +50,7 @@
       <file leaf-file-name="cart.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cart/cart.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="252">
               <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
             </state>
           </provider>
@@ -269,16 +245,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49453977" visible="true" weight="0.18075117" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49453977" visible="true" weight="0.18075117" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32917318" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32917318" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32917318" />
       <window_info id="Structure" order="2" sideWeight="0.5054602" side_tool="true" weight="0.26134586" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2074883" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2074883" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -674,7 +649,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cart/cart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="252">
           <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
         </state>
       </provider>
