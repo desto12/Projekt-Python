@@ -1,0 +1,31 @@
+{% extends 'shop_app/base.html' %}
+{% load static %}
+{% block title %}
+    Dane do wysyłki
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h1 style="margin-top: 6%">Dane do wysyłki</h1>
+    <h2>Twoje zamówienie:</h2>
+    <ul>
+       {% for item in cart %}
+        <div class="col-md-2">
+            <div class="thumbnail">
+        <img src="{{ item.product.image.url }}" class="img-fluid" style="height: 50px;width: auto;">
+        {{ item.quantity }}x <b>{{item.product}}</b> o wartości: <span>{{item.total_price}}PLN</span>
+            </div>
+        </div>
+                {% endfor %}
+        <div class="row">
+    </ul>
+        <h3>Suma: {{ cart.all_price }}PLN</h3>
+    <form class="form-horizontal" action="." method="post">
+        <div class="form-group">
+        {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-default">Zamów</button>
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock %}

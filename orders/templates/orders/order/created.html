@@ -1,0 +1,11 @@
+{% extends 'shop_app/base.html' %}
+{% load static %}
+{% block title %}
+    Dziękujemy
+{% endblock %}
+
+{% block content %}
+<h1 style="margin-top: 6%">Dziękujemy za zamówienie</h1>
+<p>Twoje zamówienie zostało złożone. Numer zamówienia: {{order.id}}</p>
+<td><a href="{% url "shop:product_list" %}" class="btn btn-primary">Wróć do strony głównej</a></td>
+{% endblock %}

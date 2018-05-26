@@ -1,0 +1,15 @@
+{% extends 'shop_app/base.html' %}
+{% load static %}
+{% block title %}
+    Koszyk
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<h1 style="margin-top: 6%">Zostałeś wylogowany</h1><hr>
+<a href='{% url 'shop:product_list' %}'>Strona Główna</a>
+
+</div>
+
+{% endblock %}

@@ -42,7 +42,7 @@
         </tr>
                     <tr>
                 <td><a href="{% url "shop:product_list" %}" class="btn btn-primary">Kontynuuj zakupy</a></td>
-                <td colspan="3"><a href="#"  class="pull-right btn btn-success">Przejdź do płatności</a></td>
+                <td colspan="3"><a href="{% url "orders:order_create" %}" class="pull-right btn btn-success">Przejdź do płatności</a></td>
             </tr>
         </tbody>
     </table>

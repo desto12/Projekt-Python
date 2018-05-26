@@ -26,7 +26,7 @@ class Produkt(models.Model):
     opis = models.TextField(blank=True)
     cena = models.DecimalField(max_digits=10, decimal_places=2)
     dostępność = models.BooleanField(default=True)
-    stan = models.PositiveIntegerField()
+    stan = models.PositiveIntegerField(default=0)
     utworzono = models.DateTimeField(auto_now_add=True)
     aktualizacja = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='produkty/%Y/%m/%d', blank=True)

@@ -29,7 +29,6 @@
                   {% endfor %}
               </div>
  
- 
           </div><!-- /.blog-post -->
  
         </div><!-- /.blog-main -->
@@ -40,11 +39,12 @@
 
 
             <ul class="nav nav-pills nav-stacked" id="red">
-              <li {% if not category %} class="active"{% endif %}><a href="{% url 'shop:product_list' %}">Wszystko</a></li>
-            {% for c in categories %}
- 
-              <li {% if category.slug == c.slug %} class="active"{% endif %} id="kategoria">
-                  <a href="{{ c.get_absolute_url }}">{{ c.nazwa }}</a>
+ <li {% if not category %} class="active red"{% endif %}><a href="{% url 'shop:product_list' %}">Wszystko<span class="badge badge-light">{{ sum_total }}</span></a></li>
+                {% for c in categories %}
+
+              <li {% if category.slug == c.slug %} class="active red"{% endif %} id="kategoria">
+
+                  <a href="{{ c.get_absolute_url }}">{{ c.nazwa }}<span class="badge badge-light">{% for key, value in sum.items %} {%if c == key%} {{ value }} {% endif %}{% endfor %} </span></a>
               </li>
             {% endfor %}
             </ul>
