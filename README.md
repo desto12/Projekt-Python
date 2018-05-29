@@ -43,5 +43,5 @@ Czego brakuje:
 Raport prototyp II
 29.05.2018
 
-Udało się dodać system zamówień, oraz możliwość rejstracji oraz logowania użytkowników
+Udało się dodać system zamówień, możliwość rejstracji oraz logowania użytkowników
 Aktualnie pracuję nad panelem użytkowników oraz płatnościami PayPal
