@@ -39,3 +39,9 @@ Czego brakuje:
 -strony podglądu szczegółowego przedmiotu (widok jest stworzony)
 -rejstracji użytkowników
 -przekierowań do płatności
+
+Raport prototyp II
+29.05.2018
+
+Udało się dodać system zamówień, oraz możliwość rejstracji oraz logowania użytkowników
+Aktualnie pracuję nad panelem użytkowników oraz płatnościami PayPal
