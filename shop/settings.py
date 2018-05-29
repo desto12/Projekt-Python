@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'paypal.standard.ipn',
     'shop_app',
     'cart',
     'orders',
     'accounts',
+    'payment',
 
 ]
 
@@ -127,3 +129,5 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
 CART_SESSION_ID = 'cart'
+LOGIN_REDIRECT_URL = '/'
+PAYPAL_TEST = True

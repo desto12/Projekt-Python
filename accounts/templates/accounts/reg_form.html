@@ -1,17 +1,21 @@
 {% extends 'shop_app/base.html' %}
 {% load static %}
 {% block title %}
-    Login
+    Rejstracja
 {% endblock %}
 
 {% block content %}
-<h1> Logowanie</h1>
 <div class="container">
+
+	<h1 style="margin-top: 6%">Zarejstruj się</h1><hr>
+
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Zaloguj się</button>
+        <button type="submit">Rejstruj</button>
     </form>
+<a href='{% url 'shop:product_list' %}'>Strona Główna</a>
+
 </div>
 
 {% endblock %}

@@ -1,19 +1,20 @@
 {% load static %}
-<nav class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px; background-color: red; border:0px; height:auto" id="nav">
+<nav class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px;border:0px; background-color: red;" id="nav">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="container-fluid">
-      <div class="navbar-header">
+      <div class="navbar-header" style="height:80px">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Nawigacja</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="{% url 'shop:product_list' %}" style="color: #ffffff">Sklep Meblowy</a>
+    <a class="navbar-brand" href="{% url 'shop:product_list' %}" style="color: #ffffff">
+        <img class="img-rounded" src="{% static 'img/logo.png' %}" style="height:40px;" >Sklep Meblowy</a>
   </div>
-
   <!-- Collect the nav links, forms, and other content for toggling -->
-              <ul class="nav navbar-nav navbar-right" id="koszyk">
+
+              <ul class="nav navbar-nav navbar-right" id="koszyk" style="margin-top:40px">
            <li>
             {% with total_items=cart|length %}
               {% if cart|length > 0 %}
@@ -32,17 +33,17 @@
           {% if request.user.is_authenticated %}
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">{{ request.user.username }}<b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="accounts/logout">Wyloguj się</a></li>
+          <li><a href="{% url 'accounts:logout' %}">Wyloguj się</a></li>
             {% else %}
           <li class="divider"></li>
-          <li><a href="accounts/login" style="color: #ffffff"><span class="glyphicon glyphicon-user"></span> Logowanie</a></li>
-         <li><a href="#" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span> Rejstracja</a></li>
+          <li><a href="{% url 'accounts:login' %}" style="color: #ffffff"><span class="glyphicon glyphicon-user"></span> Logowanie</a></li>
+         <li><a href="{% url 'accounts:register' %}" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span> Rejstracja</a></li>
         </ul>
          {% endif %}
 
       </li>
     </ul>
-
+  </div>
   </div>
   </div>
 </nav>

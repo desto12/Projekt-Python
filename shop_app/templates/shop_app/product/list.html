@@ -33,11 +33,9 @@
  
         </div><!-- /.blog-main -->
  
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="col-sm-2 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module">
             <h4>Kategorie</h4>
-
-
             <ul class="nav nav-pills nav-stacked" id="red">
  <li {% if not category %} class="active red"{% endif %}><a href="{% url 'shop:product_list' %}">Wszystko<span class="badge badge-light">{{ sum_total }}</span></a></li>
                 {% for c in categories %}
