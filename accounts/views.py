@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegistrationForm
+from orders.models import Order,OrderItem
 
 def logout_view(request):
     logout(request)
@@ -26,3 +27,14 @@ def profile(request):
         'user': request.user,
     }
     return render(request, 'accounts/profile.html')
+
+def history(request):
+    username = None
+    if request.user.is_authenticated:
+        username = request.user.username
+        item = OrderItem.objects.filter(order__name=username)
+    context = {
+        'username': username,
+        'item': item,
+    }
+    return render(request, 'accounts/history.html', context)

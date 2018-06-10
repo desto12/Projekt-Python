@@ -1,15 +1,14 @@
 {% extends 'shop_app/base.html' %}
 {% load static %}
 {% block title %}
-    Wylogowano
+    Profil
 {% endblock %}
 
 {% block content %}
+<h1> Profil</h1>
 <div class="container">
-
-	<h1 style="margin-top: 6%">Zostałeś wylogowany</h1><hr>
-<a href='{% url 'shop:product_list' %}'>Strona Główna</a>
-
+    <p>{{ user.first_name }}</p>
+    <p>{{ user.last_name }}</p>
 </div>
 
 {% endblock %}

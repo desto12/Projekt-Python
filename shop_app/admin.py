@@ -27,7 +27,6 @@ class UserAdmin(AdminSite):
     list_editable = ['cena', 'stan', 'dostępność']
     prepopulated_fields = {'slug': ('nazwa',)}
 
-    AdminSite.site_header = "Panel Pracownika"
     AdminSite.site_title = "Panel Pracownika"
     AdminSite.index_title = "Zarządzanie produktami"
 

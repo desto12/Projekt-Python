@@ -1,0 +1,40 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Sklep Meblowy Admin' %}{% endblock %}
+
+{% block extrastyle %}
+<style>
+#header{ background-color: red; border-bottom: solid 3px #999; }
+
+#branding h1{ color: white; }
+.module h2, .module caption, .inline-group h2 {background-color:red; color: #FFFFFF; }
+a.section:link, a.section:visited { color: #FFFFFF; }
+
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"> {% trans 'Sklep Meblowy Admin' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+            {% block welcome-msg %}
+<strong>{% trans 'Welcome,' %}</strong>
+                <strong style="color: yellow;">{% firstof user.get_short_name user.get_username %}</strong>.
+            {% endblock %}
+{% block userlinks %}
+{% if site_url %}
+<b><a href="{{ site_url }}" style="color: aquamarine">{% trans 'View site' %}</a></b>
+{% endif %}
+{% if user.is_active and user.is_staff %}
+{% url 'django-admindocs-docroot' as docsroot %}
+{% if docsroot %}
+<a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
+{% endif %}
+{% endif %}
+{% if user.has_usable_password %}
+<b><a href="{% url 'admin:password_change' %}" style="color: aquamarine">{% trans 'Change password' %}</a></b> /
+{% endif %}
+<b><a href="{% url 'admin:logout' %}" style="color: aquamarine">{% trans 'Log out' %}</a></b>
+{% endblock %}

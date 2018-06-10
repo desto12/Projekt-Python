@@ -19,6 +19,7 @@
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">{{ request.user.username }}<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li><a href="{% url 'accounts:profile' %}">Profil</a></li>
+            <li><a href="{%  url 'accounts:history' %}">Historia zakupów</a></li>
           <li><a href="{% url 'accounts:logout' %}">Wyloguj się</a></li>
             {% ifequal user.groups.all.0.name "Pracownik" %}
             <li><a href="/user_admin">Panel</a></li>

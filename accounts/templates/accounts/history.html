@@ -1,0 +1,21 @@
+{% extends 'shop_app/base.html' %}
+{% load static %}
+{% block title %}
+    Historia
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h1 style="margin-top: 6%">Historia</h1>    
+    {% for i in item %}
+    <ul>
+    <li><b>Nazwa produktu:</b> {{i.product}} <b>Cena: </b>{{i.price}}PLN <b>ilość</b>: {{i.quantity}} </li>
+    </ul>
+    {% endfor %}
+
+<a href='{% url 'shop:product_list' %}'>Strona Główna</a>
+
+</div>
+
+{% endblock %}
