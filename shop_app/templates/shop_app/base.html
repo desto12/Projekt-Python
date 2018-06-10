@@ -8,12 +8,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}" sizes="32x32" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 {% include 'shop_app/navi_bar.html' %}
-
+<div class="container">
+    <div class="row" style="margin-top:15%">
+         <button class="btn btn-info pull-right" style="background-color:red;">
+     {% with total_items=cart|length %}
+              {% if cart|length > 0 %}
+                Twój koszyk:
+                  <a href="{% url "cart:cart_detail" %}">
+               {{total_items}} przedmiot(y), {{cart.all_price}} PLN</a>
+            {% else %}
+                Twój koszyk jest pusty &nbsp
+          </li>
+          {% endif %}
+          {% endwith %}
+         </button>
+    </div>
+</div>
 {% block content %}
 
 {% endblock %}

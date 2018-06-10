@@ -1,49 +1,33 @@
 {% load static %}
-<nav class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px;border:0px; background-color: red;" id="nav">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="container-fluid">
-      <div class="navbar-header" style="height:80px">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Nawigacja</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="{% url 'shop:product_list' %}" style="color: #ffffff">
-        <img class="img-rounded" src="{% static 'img/logo.png' %}" style="height:40px;" >Sklep Meblowy</a>
-  </div>
-  <!-- Collect the nav links, forms, and other content for toggling -->
+<div class="navbar navbar-default navbar-fixed-top" style="background-color:red;">
+    <div class="navbar-inner">
+        <div class="container-fluid centertext">
+          <a class="logo" href="{% url 'shop:product_list' %}" id="logo">
+        	        <img class="img-rounded" src="{% static 'img/logo.png' %}" style="height:80px;">
+      	  </a>
+            <h4 style="color:white;">Sklep Meblowy</h4>
+        </div>
+    </div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
 
-              <ul class="nav navbar-nav navbar-right" id="koszyk" style="margin-top:40px">
-           <li>
-            {% with total_items=cart|length %}
-              {% if cart|length > 0 %}
-                Twój koszyk:
-                  <a href="{% url "cart:cart_detail" %}">
-               {{total_items}} przedmiot(y), {{cart.all_price}} PLN</a>
-            {% else %}
-                Twój koszyk jest pusty &nbsp
-          </li>
-          {% endif %}
-          {% endwith %}
-    </ul>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-          {% if request.user.is_authenticated %}
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">{{ request.user.username }}<b class="caret"></b></a>
+    </button>
+    <div class="navbar-collapse collapse">
+        {% if request.user.is_authenticated %}
+        <ul class="nav nav-justified">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">{{ request.user.username }}<b class="caret"></b></a>
         <ul class="dropdown-menu">
+            <li><a href="{% url 'accounts:profile' %}">Profil</a></li>
           <li><a href="{% url 'accounts:logout' %}">Wyloguj się</a></li>
+            {% ifequal user.groups.all.0.name "Pracownik" %}
+            <li><a href="/dashboard">Panel</a></li>
+            {% endifequal %}
             {% else %}
-          <li class="divider"></li>
+            <ul class="nav nav-justified">
           <li><a href="{% url 'accounts:login' %}" style="color: #ffffff"><span class="glyphicon glyphicon-user"></span> Logowanie</a></li>
          <li><a href="{% url 'accounts:register' %}" style="color: #ffffff"><span class="glyphicon glyphicon-log-in"></span> Rejstracja</a></li>
-        </ul>
-         {% endif %}
-
-      </li>
-    </ul>
-  </div>
-  </div>
-  </div>
-</nav>
+        {% endif %}
+                </ul>
+    </div>
+</div>
