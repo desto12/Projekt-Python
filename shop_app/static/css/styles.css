@@ -5,3 +5,19 @@
 
 .thumbnail:hover{opacity: 0.5;}
 
+
+.centertext {
+  	text-align: center;
+  }
+
+.logo {
+   margin:0 auto; float: none;
+  }
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+    border-radius: 0px;
+}

@@ -21,7 +21,7 @@
             <li><a href="{% url 'accounts:profile' %}">Profil</a></li>
           <li><a href="{% url 'accounts:logout' %}">Wyloguj się</a></li>
             {% ifequal user.groups.all.0.name "Pracownik" %}
-            <li><a href="/dashboard">Panel</a></li>
+            <li><a href="/user_admin">Panel</a></li>
             {% endifequal %}
             {% else %}
             <ul class="nav nav-justified">
